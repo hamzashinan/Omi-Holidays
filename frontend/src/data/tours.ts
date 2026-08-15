@@ -47,7 +47,7 @@ export const tours: Tour[] = [
       "Sunrise viewpoint",
     ],
     image_url:
-      "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSoBigYxaiVhONCqXt49PE-jFTI7Ykn3GuidctdUFJuA&s=10",
     is_featured: true,
     available_from: "2026-08-01",
     available_to: "2027-03-31",
@@ -73,7 +73,7 @@ export const tours: Tour[] = [
       "Cafe stop",
     ],
     image_url:
-      "https://images.unsplash.com/photo-1590123717655-8c4b7f990a48?auto=format&fit=crop&w=1200&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJlWpJDJTUU0Z2LrbBMiZMctcEuZeT9_l4OIP0s4h9eQ&s=10",
     is_featured: false,
     available_from: "2026-08-01",
     available_to: "2027-03-31",
@@ -99,7 +99,7 @@ export const tours: Tour[] = [
       "Nature walk",
     ],
     image_url:
-      "https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1200&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaYJXR1F5swBtca3_prYwryTepk-WRrSxZC4Fx5VXTsQ&s=10",
     is_featured: false,
     available_from: "2026-08-01",
     available_to: "2027-03-31",
@@ -132,28 +132,28 @@ export const tours: Tour[] = [
   },
 
   {
-    id: 6,
-    title: "Kumarakom Wellness Retreat",
-    slug: "kumarakom-wellness-retreat",
-    location: "Kumarakom",
-    region: "Kerala",
-    category: "wellness",
-    duration_days: 3,
-    group_size: 6,
-    price: "18200.00",
-    rating: "4.89",
-    description:
-      "Slow down beside Vembanad Lake with Ayurveda-inspired treatments, gentle yoga, and curated local meals.",
-    highlights: [
-      "Lakeside stay",
-      "Yoga sessions",
-      "Ayurveda consultation",
-      "Backwater canoe ride",
-    ],
-    image_url:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
-    is_featured: true,
-    available_from: "2026-08-01",
-    available_to: "2027-03-31",
-  },
+  id: 6,
+  title: "Wayanad Nature Escape",
+  slug: "wayanad-nature-escape",
+  location: "Wayanad",
+  region: "Kerala",
+  category: "nature",
+  duration_days: 3,
+  group_size: 8,
+  price: "16800.00",
+  rating: "4.91",
+  description:
+    "Experience the untouched beauty of Wayanad with waterfalls, wildlife, tea plantations, caves, and breathtaking mountain viewpoints.",
+  highlights: [
+    "Edakkal Caves",
+    "Soochipara Waterfalls",
+    "Tea plantation visit",
+    "Wildlife safari & sunrise viewpoint",
+  ],
+  image_url:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXAqFXl4DOlBuooqn4aZkXtBlmO6VcNqFu2mY-stNEQ&s=10",
+  is_featured: true,
+  available_from: "2026-08-01",
+  available_to: "2027-03-31",
+},
 ];

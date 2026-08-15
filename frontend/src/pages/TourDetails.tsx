@@ -1,42 +1,22 @@
 import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import type { Tour } from "../types/tour";
-import { getTourBySlug } from "../services/api";
+import { tours } from "../data/tours";
 
 export default function TourDetails() {
   const { slug } = useParams();
-  const [tour, setTour] = useState<Tour | null>(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (slug) {
-      getTourBySlug(slug)
-        .then((data) => {
-          setTour(data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.error("Error fetching tour:", err);
-          setLoading(false);
-        });
-    }
-  }, [slug]);
-
-  if (loading) {
-    return <main className="not-found-page"><div className="not-found-content"><p>Loading...</p></div></main>;
-  }
+  const tour = tours.find((item) => item.slug === slug);
 
   if (!tour) {
     return (
-      <main className="not-found-page">
-        <div className="not-found-content">
+      <main className="notfound-page">
+        <div className="notfound-content">
           <h1>Tour Not Found</h1>
 
           <p>
             Sorry, we couldn't find the destination you're looking for.
           </p>
 
-          <Link to="/tours" className="back-button">
+          <Link to="/tours" className="notfound-btn">
             Back to Tours
           </Link>
         </div>
@@ -44,18 +24,27 @@ export default function TourDetails() {
     );
   }
 
+  const whatsappMessage = `Hello OMI Holidays,
+
+I'm interested in the *${tour.title}*.
+
+📍 Location: ${tour.location}
+🕐 Duration: ${tour.duration_days} Days
+👥 Group Size: Up to ${tour.group_size}
+💰 Price: ₹${Number(tour.price).toLocaleString("en-IN")}
+
+Please share more details.`;
+
   return (
     <main className="tour-details-page">
-
       {/* Hero */}
       <section className="details-hero">
-        <img
-          src={tour.image_url}
-          alt={tour.title}
-        />
+        <img src={tour.image_url} alt={tour.title} />
 
         <div className="details-overlay">
-          <p>{tour.location}, {tour.region}</p>
+          <p>
+            {tour.location}, {tour.region}
+          </p>
 
           <h1>{tour.title}</h1>
 
@@ -67,22 +56,11 @@ export default function TourDetails() {
 
       {/* Content */}
       <section className="details-content">
-
-        {/* Main Content */}
         <div className="details-main">
-
           <div className="details-meta">
-            <span>
-              📍 {tour.location}
-            </span>
-
-            <span>
-              🕐 {tour.duration_days} Days
-            </span>
-
-            <span>
-              👥 Up to {tour.group_size} people
-            </span>
+            <span>📍 {tour.location}</span>
+            <span>🕐 {tour.duration_days} Days</span>
+            <span>👥 Up to {tour.group_size} People</span>
           </div>
 
           <h2>About this experience</h2>
@@ -94,19 +72,17 @@ export default function TourDetails() {
           <h2>Highlights</h2>
 
           <ul className="highlights-list">
-            {tour.highlights.map((highlight) => (
-              <li key={highlight}>
+            {tour.highlights.map((item) => (
+              <li key={item}>
                 <span>✓</span>
-                {highlight}
+                {item}
               </li>
             ))}
           </ul>
-
         </div>
 
         {/* Booking Card */}
         <aside className="booking-card">
-
           <p className="booking-label">
             Starting from
           </p>
@@ -116,13 +92,12 @@ export default function TourDetails() {
           </h2>
 
           <p className="booking-info">
-            {tour.duration_days} Days · Up to{" "}
-            {tour.group_size} people
+            {tour.duration_days} Days · Up to {tour.group_size} People
           </p>
 
           <a
             href={`https://wa.me/917012299227?text=${encodeURIComponent(
-              `Hello OMI Holidays, I am interested in ${tour.title}.`
+              whatsappMessage
             )}`}
             target="_blank"
             rel="noreferrer"
@@ -132,21 +107,16 @@ export default function TourDetails() {
           </a>
 
           <p className="booking-note">
-            No payment required. Our travel team will contact
-            you to confirm your trip.
+            No payment required. Our travel team will contact you to confirm your
+            trip.
           </p>
-
         </aside>
-
       </section>
 
       {/* Back */}
       <div className="details-back">
-        <Link to="/tours">
-          ← Back to all tours
-        </Link>
+        <Link to="/tours">← Back to all tours</Link>
       </div>
-
     </main>
   );
 }
