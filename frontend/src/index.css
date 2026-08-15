@@ -75,7 +75,7 @@ main {
 
 /* =========================================================
    NAVBAR
-   ========================================================= */
+========================================================= */
 
 .navbar {
   position: absolute;
@@ -83,14 +83,13 @@ main {
   left: 0;
   right: 0;
   z-index: 100;
-  height: 86px;
 
+  height: 86px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding: 0 6%;
-
   color: white;
 }
 
@@ -98,6 +97,7 @@ main {
   display: flex;
   align-items: center;
   gap: 15px;
+  text-decoration: none;
 }
 
 .navbar-logo img {
@@ -109,10 +109,10 @@ main {
 .brand-name {
   display: flex;
   flex-direction: column;
-
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 1px;
+  color: white;
 }
 
 .brand-name b {
@@ -121,70 +121,130 @@ main {
 
 .brand-name small {
   margin-top: 3px;
-
   font-size: 7px;
   letter-spacing: 1.2px;
   font-weight: 500;
-
   opacity: 0.85;
 }
 
-.navbar nav {
+/* Desktop menu */
+.navbar-menu {
   display: flex;
   align-items: center;
   gap: 38px;
 }
 
-.navbar nav a {
+.navbar-menu a {
   position: relative;
-
   font-size: .84rem;
-  font-weight: 800;
-
-  color: var(--green);
+  font-weight: 700;
+  color: white;
   text-decoration: none;
 }
 
-.navbar nav a::after {
+.navbar-menu a::after {
   content: "";
-
   position: absolute;
   left: 0;
   bottom: -8px;
-
   width: 0;
   height: 2px;
-
   background: var(--gold-light);
-
-  transition: width 0.25s ease;
+  transition: .25s;
 }
 
-.navbar nav a:hover::after {
-  width: 100%;
-}
-
-.navbar nav a:hover {
+.navbar-menu a:hover {
   color: var(--gold-light);
 }
 
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
 .nav-cta {
-  padding: 12px 21px;
-
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 12px 22px;
+  border: 1px solid rgba(255,255,255,.45);
   border-radius: 999px;
-
   color: white;
-
+  text-decoration: none;
   font-size: 13px;
   font-weight: 600;
-
-  transition: 0.25s ease;
+  transition: .25s;
 }
 
 .nav-cta:hover {
-  background: rgb(244, 243, 243);
+  background: white;
   color: var(--green-900);
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:768px){
+
+  .navbar{
+    height:72px;
+    padding:0 18px;
+  }
+
+  .navbar-logo img{
+    width:48px;
+    height:48px;
+  }
+
+  .brand-name{
+    font-size:14px;
+  }
+
+  .brand-name small{
+    display:none;
+  }
+
+  .nav-cta{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+  }
+
+  .navbar-menu{
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#0b5d3f;
+
+    display:none;
+    flex-direction:column;
+    gap:22px;
+
+    padding:28px 0;
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+  }
+
+  .navbar-menu.active{
+    display:flex;
+  }
+
+  .navbar-menu a{
+    color:white;
+    font-size:16px;
+  }
 }
 
 /* =========================================================
