@@ -44,7 +44,7 @@ export default function Contact() {
               The fastest way to reach us is via WhatsApp. Chat with our representatives to get instant quotes, customize your packages, and book your dream holiday.
             </p>
             <a
-              href="https://wa.me/917012299227"
+              href="https://wa.me/917994186178"
               target="_blank"
               rel="noreferrer"
               className="whatsapp-button"
