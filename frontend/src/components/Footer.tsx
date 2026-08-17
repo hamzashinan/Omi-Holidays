@@ -84,12 +84,12 @@ export default function Footer() {
 
           <a href="tel:+919876543210">
             <Phone size={17} />
-            <span>+91 98765 43210</span>
+            <span>+91 7994186178</span>
           </a>
 
           <a href="mailto:hello@omiholidays.com">
             <Mail size={17} />
-            <span>hello@omiholidays.com</span>
+            <span>omiholidays@gmail.com</span>
           </a>
 
           <div className="contact-item">
