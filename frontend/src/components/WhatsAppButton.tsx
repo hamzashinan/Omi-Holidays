@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "917994186178"; // New number
+  const phoneNumber = "917994186178"; 
 
   const message = encodeURIComponent(
     "Hello OMI Holidays! 👋\n\nI would like to enquire about a Kerala holiday package.\n\nPlease share the available packages and details."
