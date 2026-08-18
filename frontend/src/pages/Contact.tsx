@@ -20,7 +20,7 @@ export default function Contact() {
               <div className="contact-icon">📞</div>
               <h3>Call Us</h3>
               <p>Speak directly to our travel experts.</p>
-              <strong>+91 70122 99227</strong>
+              <strong>+91 62822 91058</strong>
             </div>
 
             <div className="contact-box">
@@ -44,7 +44,7 @@ export default function Contact() {
               The fastest way to reach us is via WhatsApp. Chat with our representatives to get instant quotes, customize your packages, and book your dream holiday.
             </p>
             <a
-              href="https://wa.me/917994186178"
+              href="https://wa.me/916282291058"
               target="_blank"
               rel="noreferrer"
               className="whatsapp-button"

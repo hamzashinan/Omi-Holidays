@@ -1,3 +1,4 @@
+import WhyChooseUs from "../components/WhyChooseUs";
 export default function About() {
   return (
     <main className="page">
@@ -45,6 +46,8 @@ export default function About() {
           </div>
         </div>
       </section>
+      <WhyChooseUs />
     </main>
+
   );
 }

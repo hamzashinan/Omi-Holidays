@@ -57,34 +57,14 @@ export default function Footer() {
           <Link to="/contact">Contact</Link>
         </div>
 
-        {/* Destinations */}
-        <div className="footer-column">
-          <h3 className="footer-column-title">Destinations</h3>
-
-          <Link to="/tour/munnar-tea-valley-escape">
-            Munnar
-          </Link>
-
-          <Link to="/tour/alleppey-private-houseboat-cruise">
-            Alleppey
-          </Link>
-
-          <Link to="/tour/fort-kochi-heritage-walk">
-            Fort Kochi
-          </Link>
-
-          <Link to="/tour/varkala-cliff-beach-weekend">
-            Varkala
-          </Link>
-        </div>
 
         {/* Contact */}
         <div className="footer-column footer-contact">
           <h3 className="footer-column-title">Get In Touch</h3>
 
-          <a href="tel:+919876543210">
+          <a href="tel:+916282291058">
             <Phone size={17} />
-            <span>+91 7994186178</span>
+            <span>+91 62822 91058</span>
           </a>
 
           <a href="mailto:hello@omiholidays.com">

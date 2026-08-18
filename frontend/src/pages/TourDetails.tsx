@@ -96,7 +96,7 @@ Please share more details.`;
           </p>
 
           <a
-            href={`https://wa.me/917994186178?text=${encodeURIComponent(
+            href={`https://wa.me/916282291058?text=${encodeURIComponent(
               whatsappMessage
             )}`}
             target="_blank"
