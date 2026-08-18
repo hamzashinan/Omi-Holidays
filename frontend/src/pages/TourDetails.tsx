@@ -34,6 +34,9 @@ I'm interested in the *${tour.title}*.
 💰 Price: ₹${Number(tour.price).toLocaleString("en-IN")}
 
 Please share more details.`;
+const whatsappUrl = `https://wa.me/916282291058?text=${encodeURIComponent(
+  whatsappMessage
+)}`;
 
   return (
     <main className="tour-details-page">
@@ -95,10 +98,8 @@ Please share more details.`;
             {tour.duration_days} Days · Up to {tour.group_size} People
           </p>
 
-          <a
-            href={`https://wa.me/916282291058?text=${encodeURIComponent(
-              whatsappMessage
-            )}`}
+            <a
+            href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
             className="whatsapp-button"

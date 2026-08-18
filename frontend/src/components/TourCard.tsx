@@ -13,11 +13,26 @@ export default function TourCard({ tour }: TourCardProps) {
       ? tour.image_url
       : `${BACKEND_URL}${tour.image_url}`;
 
+  // WhatsApp message
+  const whatsappMessage = `Hello OMI Holidays,
+
+I'm interested in the ${tour.title}.
+
+📍 Location: ${tour.location}
+🕐 Duration: ${tour.duration_days} Days
+👥 Group Size: Up to ${tour.group_size}
+💰 Price: ₹${Number(tour.price).toLocaleString("en-IN")}
+
+Please share more details.`;
+
+  const whatsappUrl = `https://wa.me/916282291058?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
   return (
     <article className="tour-card">
       <div className="tour-image">
         <img src={imageUrl} alt={tour.title} />
-
         <span className="tour-category">{tour.category}</span>
       </div>
 
@@ -28,7 +43,6 @@ export default function TourCard({ tour }: TourCardProps) {
         </div>
 
         <h3>{tour.title}</h3>
-
         <p>{tour.description}</p>
 
         <div className="tour-info">
@@ -43,9 +57,7 @@ export default function TourCard({ tour }: TourCardProps) {
           </Link>
 
           <a
-            href={`https://wa.me/916282291058?text=${encodeURIComponent(
-              `I'm interested in the ${tour.title} tour.`
-            )}`}
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="tour-button enquiry"
